@@ -1,1 +1,104 @@
-// Specific CSS for your home-page
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  padding: 0 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 25%
+}
+
+input[type="email"], input[type="submit"] {
+  margin-right: 10px;
+}
+
+h1, h4 {
+  text-align: center; /* Center-align text within h1 and h4 */
+  // font-size: 1em;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin: 0 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  form {
+    flex-direction: column;
+    margin: 0 10%
+  }
+
+  input[type="email"], input[type="submit"] {
+    margin-bottom: 10px;
+  }
+}
+
+h4 {
+  margin-top: 40px;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.secondary {
+  margin-top: 50px;
+}
+
+.gradient-background {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(62deg, #00DBDE, #3c6ae7, #7c23d5, #FC00FF);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+}
+@-webkit-keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
+@keyframes gradient{
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+     background-position: 0% 50%;
+  }
+}
