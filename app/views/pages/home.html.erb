@@ -1,16 +1,29 @@
-<%# <%= render partial: 'shared/navbar' %>
 <div class="gradient-background page">
-  <div class="content">
+<%# <%= render partial: 'shared/navbar' %>
+<nav class="navbar bg-light">
+  <%# <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Navbar</span>
+  </div> %>
+  <%# <%= image_tag "favicon3.png", alt: "Image Description" %>
+</nav>
+  <div class="content pb-5">
     <h1 class="text-white mb-5 mx-5 fw-medium">Get viral from newsjacking</h1>
-    <form action="" method="post">
-      <input type="email" name="" id="" placeholder="Your email" class="form-control">
+    <form action="/waiting_users" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="email" name="waiting_user[email]" placeholder="Your email" class="form-control">
       <button type="submit" class="btn btn-primary badge">Join waitlist</button>
     </form>
-
   </div>
   <div class="secondary">
-    <h4 class="mb-5 mx-5 fw-medium fs-5 text-white-50">Trusted by the world’s leading brands (not there yet)</h4>
+    <h4 class="mb-5 mx-5 fw-medium fs-5 text-white-50">Follow us on</h4>
   </div>
+  <a href="https://www.linkedin.com/company/newsjack" target="_blank">
+    <%= image_tag "linkedin.png", alt: "Image Description" %>
+  </a>
+  <a href="https://twitter.com/mikececconello" target="_blank">
+    <%= image_tag "twitter.png", alt: "Image Description" %>
+  </a>
+
 
 </div>
 <%# <div class="page">
@@ -18,3 +31,11 @@
       <h1 class="text-white mb-5 mx-5 fw-medium"><strong>See how we do it</strong></h1>
   </div>
 </div> %>
+<% flash.each do |type, message| %>
+  <div class="flash flash-<%= type %> alert alert-dismissible fade show" role="alert">
+    <span><strong><%= flash_icon(type) %></strong> <%= message %></span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>
