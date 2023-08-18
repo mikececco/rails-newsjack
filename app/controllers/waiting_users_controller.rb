@@ -5,11 +5,11 @@ class WaitingUsersController < ApplicationController
 
     if @waiting_user.save
       # Success: Redirect or render something
-      flash[:success] = "Yay! 🎉 you successfully joined the waitlist."
+      flash[:success] = "Yay! 🎉 you successfully joined the waitlist. "
       redirect_to root_path
     else
       # Failure: Redisplay the form with errors
-      flash[:danger] = "Oops! 🤔 some error."
+      flash[:danger] = "Oops! 🤔 some error. "
       redirect_to root_path
     end
   end
