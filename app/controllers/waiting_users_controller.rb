@@ -17,6 +17,6 @@ class WaitingUsersController < ApplicationController
   private
 
   def waiting_user_params
-    params.require(:waiting_user).permit(:email)
+    params.require(:waiting_user).permit(:email, :firstname, :company_name)
   end
 end
