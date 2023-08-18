@@ -11,8 +11,8 @@
     <form action="/waiting_users" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="email" name="waiting_user[email]" placeholder="Your email" class="form-control">
-      <input type="string" name="waiting_user[name]" placeholder="Your name" class="form-control">
-      <input type="text" name="waiting_user[company]" placeholder="Your company" class="form-control">
+      <input type="string" name="waiting_user[firstname]" placeholder="Your name" class="form-control">
+      <input type="text" name="waiting_user[company_name]" placeholder="Your company" class="form-control">
       <div class="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-primary badge">Join waitlist</button>
       </div>
