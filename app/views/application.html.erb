@@ -9,16 +9,21 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
   <link rel="icon" type="image/png" href="<%= asset_path('favicon3.png') %>" />
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJNXQJ1BNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    document.addEventListener("turbolinks:load", function (event) {
+      gtag('config', 'G-TJNXQJ1BNV', {
+        page_location: event.data.url,
+        page_path: event.srcElement.location.pathname,
+        page_title: event.srcElement.title
+      });
+    })
+  </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJNXQJ1BNV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TJNXQJ1BNV');
-</script>
 <body>
   <%= yield %>
 </body>
