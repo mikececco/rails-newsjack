@@ -7,27 +7,41 @@
       </a>
     </div>
   <% end %>
+
   <div class="content pb-5">
-    <h1 class="text-white mb-5 mx-5 fw-medium">Get viral by newsjacking</h1>
+    <h1 class="text-white mx-5 fw-medium"><strong> Go Viral Effortlessly </strong></h1>
+    <p class="text-white mb-5 mx-5 px-5 fw-medium">Ride the Wave of What's Hot: Elevate Your Brand's Awareness with Strategic Newsjacking</p>
     <form action="/waiting_users" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="email" name="waiting_user[email]" placeholder="Your email" class="form-control">
       <input type="string" name="waiting_user[firstname]" placeholder="Your name" class="form-control">
       <input type="text" name="waiting_user[company_name]" placeholder="Your company" class="form-control">
       <div class="d-flex justify-content-center mt-3">
-        <button type="submit" class="btn btn-primary badge">Join waitlist</button>
+      <button type="submit" class="btn badge transparent-background">Request an invite</button>
       </div>
     </form>
   </div>
+
   <div class="secondary">
     <h4 class="mb-2 mx-5 fw-medium fs-5 text-white-50">Follow us on</h4>
   </div>
-  <a href="https://www.linkedin.com/company/newsjack" target="_blank" class="custom-link">
-    <%= image_tag "linkedin.png", alt: "Image Description" %>
-  </a>
-  <a href="https://twitter.com/mikececconello" target="_blank" class="custom-link">
-    <%= image_tag "twitter.png", alt: "Image Description" %>
-  </a>
+
+  <div class="d-flex justify-content-center">
+    <div class="row">
+      <div class="col-6"> <!-- Adjust column width as needed -->
+        <a href="https://www.linkedin.com/company/newsjack" target="_blank" class="custom-link">
+          <%= image_tag "linkedin.png", alt: "LinkedIn", class: "img-fluid lighter-opacity" %>
+        </a>
+      </div>
+      <div class="col-6"> <!-- Adjust column width as needed -->
+        <a href="https://twitter.com/mikececconello" target="_blank" class="custom-link">
+          <%= image_tag "twitter.png", alt: "Twitter", class: "img-fluid lighter-opacity" %>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
 
 
 </div>
