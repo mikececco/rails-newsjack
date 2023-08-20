@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  mount ActiveAnalytics::Engine, at: "analytics"
+
   resources :waiting_users, only: [:create]
 end

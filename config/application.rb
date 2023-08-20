@@ -19,6 +19,8 @@ module RailsNewsjack
 
     # Configuration for the application, engines, and railties goes here.
     #
+    require "active_job/railtie" # <== !! Uncomment
+    require "action_mailer/railtie"  # <==  !! Uncomment
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
