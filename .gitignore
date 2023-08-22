@@ -32,6 +32,8 @@
 
 # Ignore .env file containing credentials.
 .env*
+local_env.yml
+
 
 # Ignore Mac and Linux file system files
 *.swp
