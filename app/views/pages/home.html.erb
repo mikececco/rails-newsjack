@@ -3,6 +3,12 @@
 <% content_for :meta_description, "Ride the Wave of What's Hot: Elevate Your Brand's Awareness with Strategic Newsjacking" %>
 
 <div class="gradient-background page">
+  <div class="position-absolute top-0 start-0">
+    <a href="https://twitter.com/newsjackdotme" target="_blank">
+      <%= image_tag 'favicon2.svg', width: 100, height: 100, class: 'svg-image' %>
+    </a>
+  </div>
+
   <% flash.each do |type, message| %>
     <div class="flash flash-<%= type %> alert alert-dismissible fade show" role="alert">
       <span><strong><%= flash_icon(type) %></strong> <%= message %></span>
@@ -12,18 +18,51 @@
     </div>
   <% end %>
 
-  <div class=" content">
-    <h1 class="text-white mx-5 fw-medium text-center"><strong> Go Viral Effortlessly </strong></h1>
-    <p class="text-white mb-5 mx-5 px-0 px-md-5 fw-medium text-center">Ride the Wave of What's Hot: Elevate Your Brand's Awareness with Strategic Newsjacking</p>
-    <form action="/waiting_users" method="post">
+  <div class="">
+    <div class="mb-3 pb-5">
+      <h1 class="text-white mx-5 fw-medium text-center"><strong>Elevate Your Brand, Seamlessly!</strong></h1>
+      <p class="text-white fw-medium text-center m-0">🧐 24/7 news monitoring for organic brand integration</p>
+      <p class="text-white fw-medium text-center m-0">😯 Meaningful news associations for authentic brand connections</p>
+      <p class="text-white fw-medium text-center m-0">😎 Captivating content expertly crafted.</p>
+    </div>
+    <form action="/trial_click_users" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="email" name="waiting_user[email]" placeholder="Your email" class="form-control">
-      <input type="string" name="waiting_user[firstname]" placeholder="Your name" class="form-control">
-      <input type="text" name="waiting_user[company_name]" placeholder="Your company" class="form-control">
+      <p class="text-white fw-medium text-center m-0"><i> Try it out! </i></p>
+      <%# <input type="email" name="trial_click_user[user_email]" placeholder="Your email" class="form-control"> %>
+      <input type="text" name="trial_click_user[company_description]" placeholder="Describe your company" class="form-control">
+
       <div class="d-flex justify-content-center mt-3">
-      <button type="submit" class="btn badge transparent-background">Request an invite</button>
+        <button type="submit" class="btn badge transparent-background">Newsjack 🚀</button>
       </div>
     </form>
+  </div>
+
+  <div class="container-fluid pt-5 w-75">
+    <div class="row no-gutters">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center breaking-news bg-transparent ">
+          <%# <div class="d-flex flex-row flex-grow-1 flex-fill align-items-center justify-content-center">
+            <span class="badge border border-danger bg-danger text-white px-1 custom-disabled-button">Trending now</span>
+          </div> %>
+          <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">#elon 6290 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Donald Trump Jr." 13.9k posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Figma" 5109 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">#DataAnalytics 1035 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"GPT-4" 2573 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Code Llama" 4797 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Visa" 31.2k posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">#elon 6290 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Donald Trump Jr." 13.9k posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Figma" 5109 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">#DataAnalytics 1035 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"GPT-4" 2573 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Code Llama" 4797 posts</span>
+            <span class="badge border border-white-50 bg-transparent text-white-50 px-1">"Visa" 31.2k posts</span>
+          </marquee>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="secondary d-none d-md-block">
@@ -44,5 +83,4 @@
       </div>
     </div>
   </div>
-
 </div>
