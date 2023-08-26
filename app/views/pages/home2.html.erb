@@ -1,0 +1,70 @@
+<!-- app/views/home/index.html.erb -->
+<% content_for :title, "Go Viral Seamlessly with NewsJack" %>
+<% content_for :meta_description, "Ride the Wave of What's Hot: Elevate Your Brand's Awareness with Strategic Newsjacking" %>
+
+<div class="gradient-background page">
+  <% flash.each do |type, message| %>
+    <div class="flash flash-<%= type %> alert alert-dismissible fade show" role="alert">
+      <span><strong><%= flash_icon(type) %></strong> <%= message %></span>
+      <a data-bs-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </a>
+    </div>
+  <% end %>
+
+  <div class="container text-center">
+    <div class="row d-flex align-items-center justify-content-around">
+      <div class="col-md-6 col-sm-12">
+        <div>
+          <!-- Your content for the left side -->
+          <h1 class="text-white fw-medium text-center"><strong> Go Viral Seamlessly</strong></h1>
+          <p class="text-white mt-5 custom-mt mx-5 px-0 px-md-5 fw-medium text-center">🧐 Get suitable trends for your company</p>
+          <p class="text-white mx-5 px-0 px-md-5 fw-medium text-center">😯 Auto-generate content for social-media</p>
+          <p class="text-white mb-5 mx-5 px-0 px-md-5 fw-medium text-center">😎 Publish and go viral</p>
+        </div>
+
+        <div class="d-flex justify-content-center socials">
+          <div class="row">
+            <div class="col-6"> <!-- Adjust column width as needed -->
+              <a href="https://www.linkedin.com/company/newsjack" target="_blank" class="custom-link">
+                <%= image_tag "linkedin.png", alt: "LinkedIn", class: "img-fluid lighter-opacity" %>
+              </a>
+            </div>
+            <div class="col-6"> <!-- Adjust column width as needed -->
+              <a href="https://twitter.com/newsjackdotme" target="_blank" class="custom-link">
+                <%= image_tag "twitter.png", alt: "Twitter", class: "img-fluid lighter-opacity" %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="bg-black py-5 form-control">
+          <!-- Your content for the right side -->
+          <h1 class="text-white fw-medium text-center"><strong> Try it Out! </strong></h1>
+          <p class="text-white mb-5 custom-mt mx-5 px-0 px-md-5 fw-medium text-center">For free!</p>
+
+          <form action="/trial_click_users" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+            <input type="email" name="trial_click_user[user_email]" placeholder="Your email" class="form-control">
+            <textarea name="trial_click_user[company_description]" placeholder="Describe your company" class="form-control" rows="4"></textarea>
+
+            <div class="d-flex justify-content-center mt-3">
+              <button type="submit" class="btn badge transparent-background">NewsJack me!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%#
+TRY IT OUT
+BRANDS USING NEWSJACKING SAW AN ICNREASE OF 10000%% in brand awareness
+field - INPUT WHAT DOES YOUR BUSINESS DO?
+field - your email
+button - NEWSJACK MY BUSINESS
+get notified by email
+EXAMPLES TO DISPLAY %>
