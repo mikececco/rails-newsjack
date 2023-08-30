@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   mount ActiveAnalytics::Engine, at: "analytics"
 
   resources :waiting_users, only: [:create]
+  resources :trial_click_users, only: [:create]
 end
