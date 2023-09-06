@@ -10,7 +10,7 @@ http.use_ssl = true
 
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/x-www-form-urlencoded'
-request["X-RapidAPI-Key"] = ENV['RAPID_KEY']
+request["X-RapidAPI-Key"] = '125f259f4cmsh1f8cf935dd0c7fdp1b7e50jsn26f913fab809'
 request["X-RapidAPI-Host"] = 'twitter-trends5.p.rapidapi.com'
 
 world = "woeid=1"
