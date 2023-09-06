@@ -26,11 +26,5 @@ module RailsNewsjack
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-<<<<<<< HEAD
-    require 'dotenv'
-    Dotenv.load(File.expand_path('../.env', __dir__))
-      end
-=======
   end
->>>>>>> 0222e2c8bd5f32bbdc9bdd962e09332781f34aea
 end
