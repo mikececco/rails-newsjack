@@ -26,7 +26,6 @@ data = response_dict["trends"]
 
 # Extract "name" and "volume" attributes from each hash
 name_volume_list = []
-
 data.each do |key, value|
   name = value["name"]
   volume = value["volume"]
