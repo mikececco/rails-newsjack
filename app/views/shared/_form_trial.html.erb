@@ -1,0 +1,9 @@
+<form action="/trial_click_users" method="post" data-controller="form">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <%# <input type="email" name="trial_click_user[user_email]" placeholder="Your email" class="form-control"> %>
+      <input type="text" name="trial_click_user[company_description]" placeholder="Describe your brand" class="form-control rounded">
+
+      <div class="d-flex justify-content-center mt-3">
+        <button type="submit" value="Submit" class="btn badge transparent-background rounded-pill">Try it out 🚀</button>
+      </div>
+    </form>
