@@ -1,0 +1,2 @@
+class SearchPreference < ApplicationRecord
+end

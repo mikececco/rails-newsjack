@@ -1,0 +1,14 @@
+<main class="form-signin w-100 m-auto">
+Your country now:<%= @country %>
+
+<%= simple_form_for @search_preference do |f| %>
+    <h1 class="h3 mb-3 fw-normal">Select your base country</h1>
+    <div class="form-floating">
+      <%= select_tag :country, options_for_select(ISO3166::Country.countries.map { |c| ["#{c.emoji_flag} #{c.iso_short_name}", c.iso_short_name] }), { data: { controller: "select" } } %>
+    </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary w-100 py-2' %>
+  </div>
+<% end %>
+
+</main>

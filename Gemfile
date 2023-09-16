@@ -54,6 +54,13 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem 'active_analytics'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'geocoder'
+gem 'nokogiri'
+gem 'rest-client'
+gem 'os'
+gem 'easy_translate'
+gem 'dotenv'
+gem 'geocoder'
 
 
 group :development, :test do
@@ -78,3 +85,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "countries", "~> 5.6"
+
+gem "country_select", "~> 8.0"

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :waiting_users, only: [:create]
   resources :trial_click_users, only: [:create]
+  resources :search_preferences, only: [:new, :create]
+
 end
