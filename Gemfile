@@ -60,7 +60,6 @@ gem 'rest-client'
 gem 'os'
 gem 'easy_translate'
 gem 'dotenv'
-gem 'geocoder'
 
 
 group :development, :test do
