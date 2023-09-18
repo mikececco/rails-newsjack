@@ -1,5 +1,5 @@
 <!-- app/views/home/index.html.erb -->
-<% content_for :title, "Effortlessly viral - NewsJack" %>
+<% content_for :title, "🚀 NewsJack is coming soon..." %>
 <% content_for :meta_description, "Request access to NewsJack" %>
 
 <main>
@@ -16,10 +16,7 @@
         <p class="text-white fw-medium text-center m-0">😎 Captivating content expertly crafted.</p> %>
       </div>
         <p class="text-white text-center m-0 pb-2 px-3 mb-3">Generate engaging social media content seamlessly integrating newsjacking.</p>
-        <a href="https://tally.so/r/w2aGe9" target="_blank" class="custom-link btn btn-lg text-white bg-primary rounded-pill border border-warning">
-          Request access 🚀
-          <%# <%= image_tag "linkedin.png", alt: "LinkedIn", class: "img-fluid lighter-opacity" %>
-        </a>
+        <%= render 'shared/sign_button' %>
         <%# <button class="btn btn-primary text-white bg-warning rounded-pill">Request access 🚀</button> %>
     </div>
 
@@ -61,7 +58,7 @@
       <%# <%= image_tag 'n1.png', width: 100, height: 100, class: '' %>
         <h1 class="fw-semibold text-center">Set up</h1>
 
-        <p class="lead">Define the essence, values and mission of you brand. <br>Select audience target country.</p>
+        <p class="lead">Define the essence, values and mission of your brand. <br>Select audience target country.</p>
         <%# <div class="text-center"> %>
           <%# <a href="https://tally.so/r/w2aGe9" target="_blank" class="custom-link btn text-white bg-primary rounded-pill border border-warning">
             Request access 🚀
@@ -137,9 +134,7 @@
   </div>
 </div>
 <div class="container col-xxl-8 text-center">
-  <a href="https://tally.so/r/w2aGe9" target="_blank" class="custom-link btn btn-lg text-white bg-primary rounded-pill border border-warning d-inline-flex align-items-center justify-content-center">
-    Request access 🚀
-  </a>
+  <%= render 'shared/sign_button' %>
 </div>
 
 </main>

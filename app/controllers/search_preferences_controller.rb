@@ -12,12 +12,37 @@ class SearchPreferencesController < ApplicationController
   def create
     @search_preference = SearchPreference.new(search_preference_params)
     if @search_preference.save
-      country = ISO3166::Country[search_preference_params[:country_code]]
+      country = ISO3166::Country[@search_preference.country_code]
       readable_country = country.translations[I18n.locale.to_s]
-      @scraper = Scraper.new(@search_preference.country_code, readable_country)
-      @scraped_news = @scraper.start
-      redirect_to results_search_preferences_path(scraped_news: @scraped_news)
-      # redirect_to @search_preference, notice: 'Search preference was successfully created.'
+      current_time = Time.now
+
+      # Format the current time in the desired format
+      formatted_timestamp = current_time.strftime('%Y-%m-%d %H:%M:%S.%N000 %z')
+
+      # Convert the timestamp to a DateTime object
+      timestamp_datetime = DateTime.parse(formatted_timestamp)
+
+      # Calculate the start and end of the day for the given timestamp
+      start_of_day = timestamp_datetime.beginning_of_day
+      end_of_day = timestamp_datetime.end_of_day
+      today_search_preference = SearchPreference.find_by(country_code: @search_preference.country_code, created_at: start_of_day..end_of_day)
+
+      current_date = Time.now.strftime('%Y-%m-%d')
+      cache_key = "scraper_#{@search_preference.country_code}_#{current_date}"
+
+      cached_scraper = Rails.cache.read(cache_key)
+      if today_search_preference && cached_scraper.present?
+        @scraper = cached_scraper
+      else
+        @scraper = Scraper.new
+        @scraper.country_code = @search_preference.country_code
+        @scraper.country_name = @scraper.set_country(@search_preference.country_code)
+        @scraper.scraped_news = @scraper.start
+        @scraper.save
+
+        Rails.cache.write(cache_key, @scraper, expires_in: 24.hours)
+      end
+      redirect_to results_search_preferences_path(scraped: @scraper)
     else
       render :new
     end
