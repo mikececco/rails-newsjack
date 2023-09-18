@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#home"
   get 'blog', to: 'pages#blog'
+  get 'early_access', to: 'pages#early_access'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
