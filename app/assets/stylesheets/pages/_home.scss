@@ -71,6 +71,20 @@
   height: 100vh;
 }
 
+.card-body {
+  min-height: 300px;
+  min-width: 300px;
+  margin-right: 5px;
+}
+
+.bigger {
+  font-size: 64px;
+}
+
+.nice-round {
+  border-radius: 24px;
+}
+
 .transparent-background {
   background-color: transparent;
   border-color: white;
@@ -134,6 +148,10 @@ p {
     height: 60px;
   }
 
+  .bigger {
+    font-size: 40px;
+  }
+
   .gradient-background {
     margin: 0;
   }
@@ -144,6 +162,14 @@ p {
 
   h1 {
     font-size: 27px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 16px;
   }
 
   h4 {

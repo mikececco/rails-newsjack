@@ -49,7 +49,7 @@ class SearchPreferencesController < ApplicationController
   end
 
   def results
-    @scraped_news = params[:scraped_news]
+    @scraped_news = Scraper.find(params[:scraped])
   end
 
   private
