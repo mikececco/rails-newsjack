@@ -1,10 +1,9 @@
 <main class="container py-5 mt-5">
   <%= render 'shared/logo' %>
-  <%= raise %>
   <h1 class="h3 mb-3 fw-normal">Scraped News</h1>
   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
     <div class="list-group list-group-checkable d-grid gap-2 border-0">
-      <% @scraped_news.each do |index, news_item| %>
+      <% @scraped_news.scraped_news.each do |index, news_item| %>
         <a href="<%= news_item["url"] %>" target="_blank" style="cursor: pointer !important;">
           <label class="list-group-item rounded-3 py-3">
             <%= news_item["translated"].nil? ? news_item["news"] : news_item["translated"] %>
