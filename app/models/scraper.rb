@@ -31,12 +31,12 @@ class Scraper < ApplicationRecord
   end
 
 
-  def news_display(num)
-    # p "#{num + 1}. #{CGI.unescapeHTML(@news[num].text)}".delete('\\"')
+  def news_display(news)
+    # p "#{news + 1}. #{CGI.unescapeHTML(@news[news].text)}".delete('\\"')
     begin
       EasyTranslate.api_key = ENV['TRANSLATE_KEY']
-      if EasyTranslate.detect(CGI.unescapeHTML(@news[num].text)) != 'en'
-        "#{EasyTranslate.translate(CGI.unescapeHTML(@news[num].text), to: 'en')}".delete('\\"')
+      if EasyTranslate.detect(CGI.unescapeHTML(news)) != 'en'
+        "#{EasyTranslate.translate(CGI.unescapeHTML(news), to: 'en')}".delete('\\"')
       end
     rescue StandardError => e
       puts "An error occurred: #{e.message}"
@@ -57,7 +57,7 @@ class Scraper < ApplicationRecord
         displayed_news[i] = {
           news: news[i].text,
           url: news_url[i].text,
-          translated: news_display(i)
+          translated: news_display(news[i].text)
         }
       end
     end

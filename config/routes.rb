@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   resources :trial_click_users, only: [:create]
   resources :search_preferences, only: [:new, :create] do
     get 'results', on: :collection
+    get 'post', on: :collection
+    get 'company', on: :collection
+    post 'company_submit', on: :collection
   end
 end

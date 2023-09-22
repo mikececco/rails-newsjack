@@ -1,12 +1,17 @@
 <main class="container py-5 mt-5">
   <%= render 'shared/logo' %>
-  <h1 class="h3 mb-3 fw-normal">Scraped News</h1>
+  <%= render 'shared/back' %>
+  <% hash = {:title=>"Today's top 10 trends in United States", 0=>{:news=>"Avocados are raising in popularity again, study by Harvard says...", :url=>"/search_preferences/post", :translated=>false}, 1=>{:news=>"Alan Williams resigns as Bears&#39; defensive coordinator - ESPN", :url=>"https://www.espn.com/nfl/story/_/id/38447917/alan-williams-resigns-bears-defensive-coordinator", :translated=>false}, 2=>{:news=>"Jude Bellingham born to play at Real Madrid, Nacho says - ESPN", :url=>"https://www.espn.com/soccer/story/_/id/38447610/jude-bellingham-born-play-real-madrid-says-nacho", :translated=>false}, 3=>{:news=>"Lionel Messi exits with apparent injury during Inter Miami match ...", :url=>"https://www.cnn.com/2023/09/20/sport/lionel-messi-exit-match-injury-inter-miami-toronto-spt/index.html", :translated=>false}, 4=>{:news=>"Kim Kardashian is the only reason to watch awful &#39;American Horror ...", :url=>"https://www.usatoday.com/story/entertainment/tv/2023/09/21/kim-kardashian-american-horror-story-delicate-review/70916367007/", :translated=>false}, 5=>{:news=>"Back in the Champions League, Arsenal look like they belong - ESPN", :url=>"https://www.espn.com/soccer/story/_/id/38447649/back-champions-league-arsenal-look-belong", :translated=>false}, 6=>{:news=>"Rams trading running back Cam Akers to Vikings", :url=>"https://www.nfl.com/news/rams-trading-running-back-cam-akers-to-vikings", :translated=>false}, 7=>{:news=>"Donald Trump Jr.&#39;s X account was hacked, his spokesman says", :url=>"https://www.cnn.com/2023/09/20/tech/donald-trump-jr-x-twitter-hacked/index.html", :translated=>false}, 8=>{:news=>"Opinion: The transformation of Kim Jong Un&#39;s sister", :url=>"https://www.cnn.com/2023/09/21/opinions/kim-jong-un-sister-kim-yo-jong-lee/index.html", :translated=>false}, 9=>{:news=>"Tory Lanez transferred to state prison in California", :url=>"https://www.nbcnews.com/news/us-news/megan-thee-stallion-shooting-tory-lanez-state-prison-california-rcna111295", :translated=>false}} %>
+  <% data_hash = eval(JSON.generate(hash)) %>
+  <h1 class="h3 mb-3 fw-normal"><%= data_hash[:title] %> for your company <br>to NewsJack</h1>
   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
     <div class="list-group list-group-checkable d-grid gap-2 border-0">
-      <% @scraped_news.scraped_news.each do |index, news_item| %>
-        <a href="<%= news_item["url"] %>" target="_blank" style="cursor: pointer !important;">
+      <p>Select</p>
+      <% data_hash.delete(:title) %>
+      <% data_hash.each do |index, news_item| %>
+        <a href="<%= news_item[:url] %>" style="cursor: pointer !important;">
           <label class="list-group-item rounded-3 py-3">
-            <%= news_item["translated"].nil? ? news_item["news"] : news_item["translated"] %>
+            <%= news_item[:translated] == false ? news_item[:news] : news_item[:translated] %>
           </label>
         </a>
         <% end %>

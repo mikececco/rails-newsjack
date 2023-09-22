@@ -10,12 +10,12 @@ http.use_ssl = true
 
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/x-www-form-urlencoded'
-request["X-RapidAPI-Key"] = '125f259f4cmsh1f8cf935dd0c7fdp1b7e50jsn26f913fab809'
+request["X-RapidAPI-Key"] = 'd0b234fca2msh13cd8d70484e26fp1473e2jsnea0cb42a106e'
 request["X-RapidAPI-Host"] = 'twitter-trends5.p.rapidapi.com'
 
 world = "woeid=1"
 us = "woeid=23424977"
-request.body = us
+request.body = world
 
 response = http.request(request)
 trying = response.read_body
