@@ -9,8 +9,9 @@
 
       gtag('config', 'G-TJNXQJ1BNV');
     </script>
-    <title><%= yield(:title) || "Raise brand awareness with virality - NewsJack" %></title>
-    <meta name="description" content="<%= yield(:meta_description) || "Elevate brand awareness with newsjacking" %>">
+    <title><%= yield :title || "Raise brand awareness with virality - NewsJack" %></title>
+    <meta name="description" content="<%= yield :meta_description || "Elevate brand awareness with newsjacking" %>">
+    <meta name="keywords" content="<%= yield :keywords || "newsjack, brand awareness, advertising, viral marketing" %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,6 +22,8 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <%= render 'shared/logo' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>

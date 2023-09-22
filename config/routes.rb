@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: "pages#home"
-  get 'blog', to: 'pages#blog'
   get 'early_access', to: 'pages#early_access'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,4 +12,6 @@ Rails.application.routes.draw do
   resources :search_preferences, only: [:new, :create] do
     get 'results', on: :collection
   end
+
+  resources :blog_posts, param: :id
 end
