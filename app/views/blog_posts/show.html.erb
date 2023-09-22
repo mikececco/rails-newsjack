@@ -6,6 +6,6 @@
   <div>
     <%= render 'shared/back' %>
     <h1 class="fw-bold text-center m-0 bigger"><%= @blog_post.title %></h1>
-    <p class="text-center px-3"><%= @blog_post.content %></p>
+    <p class="text-center px-3"><%= markdown(@blog_post.content) %></p>
   </div>
 </main>

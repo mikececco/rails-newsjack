@@ -209,6 +209,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redcarpet (3.6.0)
     redis (4.8.1)
     regexp_parser (2.8.1)
     reline (0.3.7)
@@ -219,6 +220,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
+    rouge (4.1.3)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -298,8 +300,10 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
+  redcarpet
   redis (~> 4.0)
   rest-client
+  rouge (~> 4.1)
   sassc-rails
   selenium-webdriver
   simple_form!

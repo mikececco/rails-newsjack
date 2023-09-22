@@ -30,7 +30,9 @@
                         <h2 class="blog-title">
                             <%= link_to post.title, blog_post_path(post) %>
                         </h2>
-                        <p><%= truncate(post.content, length: 200) %></p>
+                        <% truncated_content = truncate(strip_tags(post.content), length: 200) %>
+                        <%= markdown(truncated_content) %>
+                        <%# <p><%= truncate(post.content, length: 200) %>
                     </div>
                     <div class="link-box home-blog-link">
                         <h2><%= link_to "Read More", blog_post_path(post) %></h2>
