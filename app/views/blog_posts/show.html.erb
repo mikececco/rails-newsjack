@@ -1,22 +1,11 @@
-<h1><%= @blog_post.title %></h1>
-<p><%= @blog_post.content %></p>
+<% content_for :title, "#{@blog_post.title} - Blog" %>
+<% content_for :meta_description, truncate(strip_tags(@blog_post.content), length: 200) %>
 
 
 <main class="container py-5 mt-5">
-  <%= render 'shared/back' %>
-  <h1 class="h3 mb-3 fw-normal"><%= @blog_post.title %></h1>
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="card text-center col-md-4 mt-3 col-sm-10 p-0">
-      <div class="card-header p-0">
-        <%= image_tag 'avocado-square.png', class: 'w-100', loading:'lazy'%>
-        <div class="card-body">
-          <h3 class="card-title">How to get your avocado treatment?</h3>
-          <p class="card-text">To be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them? To die: to sleep; no more; and, by a sleep to say we end the heart-ache and the thousand natural shocks that flesh is heir to, 'tis a consummation devoutly to be wish'd. To die, to sleep; to sleep: perchance to dream: ay, there's the rub; for in that sleep of death what dreams may come when we have shuffled off this mortal coil, must give us pause. </p>
-          <span class="badge badge-pill bg-black">Twitter</span>
-          <span class="badge badge-pill bg-primary">LinkedIn</span>
-        </div>
-      </div>
-  	</div>
+  <div>
+    <%= render 'shared/back' %>
+    <h1 class="fw-bold text-center m-0 bigger"><%= @blog_post.title %></h1>
+    <p class="text-center px-3"><%= @blog_post.content %></p>
   </div>
 </main>
