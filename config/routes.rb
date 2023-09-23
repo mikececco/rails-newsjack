@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   mount ActiveAnalytics::Engine, at: "analytics"
 
-  resources :waiting_users, only: [:create]
-  resources :trial_click_users, only: [:create]
+  # resources :waiting_users, only: [:create]
+  # resources :trial_click_users, only: [:create]
   resources :search_preferences, only: [:new, :create] do
     get 'results', on: :collection
   end
 
-  resources :blog_posts, param: :id
+  resources :resources, param: :id
 end
