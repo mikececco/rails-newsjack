@@ -1,5 +1,5 @@
 <% content_for :title, "#{@resource.title} - Blog" %>
-<% truncated_content = truncate(strip_tags(@resource.content), length: 200) %>
+<% truncated_content = truncate(strip_tags(@resource.content), length: 250) %>
 <% content_for :meta_description, markdown(truncated_content) %>
 
 
