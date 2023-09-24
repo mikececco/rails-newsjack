@@ -1,9 +1,8 @@
 <!-- app/views/home/index.html.erb -->
 <% content_for :title, "🚀 NewsJack is coming soon..." %>
-<% content_for :meta_description, "Request access to NewsJack" %>
+<% content_for :meta_description, "NewsJack, brand-awareness made affordable and effortless for SMEs and solopreneurs" %>
 
 <main>
-<%= render 'shared/logo' %>
 <div class="gradient-background page shadow p-3 my-auto">
   <div class="text-center">
     <div class="mb-3 py-3">
@@ -119,38 +118,7 @@
     <%= render 'shared/sign_button_white' %>
   </div>
 </div>
-
 </main>
-
-<div class="my-5">
-  <footer class="py-3 my-4">
-   <%# <div class="secondary d-none d-md-block">
-    <h4 class="mb-2 mx-5 fw-medium fs-5 text-black-50">Follow us on</h4>
-  </div> %>
-  <div class="d-flex justify-content-center socials mb-5">
-    <div class="row">
-      <div class="col-6"> <!-- Adjust column width as needed -->
-        <a href="https://www.linkedin.com/company/newsjack" target="_blank" class="custom-link">
-          <%= image_tag "linkedin.png", alt: "LinkedIn", class: "lighter-opacity" %>
-        </a>
-      </div>
-      <div class="col-6"> <!-- Adjust column width as needed -->
-        <a href="https://twitter.com/newsjackdotme" target="_blank" class="custom-link">
-          <%= image_tag "twitter.png", alt: "Twitter", class: "lighter-opacity" %>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="d-flex align-items-center justify-content-center ppy-5">
-    <a href="https://twitter.com/newsjackdotme" target="_blank">
-      <%= image_tag 'favicon2.svg', width: 40, height: 32, class: 'svg-image me-2 mb-md-0 text-body-secondary text-decoration-none lh-1' %>
-    </a>
-      <span class="mb-md-0 text-body-secondary">&copy; 2023 NewsJack, Inc.</span>
-  </div>
-  </footer>
-</div>
-
 
 
 <%# <%= link_to "New Search Preference", new_search_preference_path %>

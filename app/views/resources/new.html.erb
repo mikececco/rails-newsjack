@@ -1,0 +1,9 @@
+<main class="container py-5 mt-5">
+  <div>
+    <%= simple_form_for @resource do |f| %>
+      <%= f.input :title %>
+      <%= f.input :content, as: :text, input_html: { rows: 10 } %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</main>

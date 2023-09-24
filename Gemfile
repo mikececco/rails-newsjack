@@ -60,6 +60,9 @@ gem 'rest-client'
 gem 'os'
 gem 'easy_translate'
 gem 'dotenv'
+gem 'friendly_id', '~> 5.4'
+gem 'redcarpet'
+
 
 
 group :development, :test do
