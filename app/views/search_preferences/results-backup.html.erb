@@ -1,0 +1,77 @@
+ <header class="container py-5 mt-5">
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/back' %>
+    </div>
+  </div>
+</header>
+<main style="min-height: 100vh;">
+  <div class="container py-5 mt-5 px-3">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-6">
+        <div class="text-center mb-4">
+          <h1 class="h3 mb-3 fw-normal">Trends in [country] for your company <br>to NewsJack</h1>
+          <%# <h1 class="h3 mb-3 fw-normal"><%= @title for your company <br>to NewsJack</h1> %>
+          <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+            <div class="list-group list-group-checkable d-grid gap-2 border-0 scrollarea">
+              <% translated_news_array = [] %>
+              <% @new_hash.first(10).each do |index, news_item| %>
+                <% translated_news = news_item[:translated] == (false || nil) ? news_item[:news] : news_item[:translated] %>
+                <% translated_news_array << translated_news if translated_news.present? %>
+                <a href="<%= news_item[:url] %>">
+                  <label class="list-group-item rounded-3 py-3">
+                    <%= translated_news %>
+                  </label>
+                </a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-6">
+        <div class="text-center mb-4">
+          <h1 class="h3 mb-3 fw-normal">Twitter trending</h1>
+          <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+            <div class="list-group list-group-checkable d-grid gap-2 border-0 scrollarea">
+              <% @twitter_trends.each do |trend| %>
+                <% translated_news_array << trend[0] %>
+                  <label class="list-group-item rounded-3 py-3">
+                    <%= "#{trend[0]} - #{trend[1]} tweets today" %>
+                  </label>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div data-controller="generate">
+      <h1 class="h3 mb-3 fw-normal">Select trend</h1>
+      <%= simple_form_for GeneratePost.new, remote: true do |form| %>
+        <%= form.input :company_description, as: :text %>
+
+        <div class="field">
+          <%= form.label :trend %>
+          <%= form.select :trend, translated_news_array %>
+        </div>
+      <%= form.submit "Create Generate Post" , data: { action: "click->generate#greet", id: "form" } %>
+
+      <% end %>
+
+      <div data-generate-target='result'></div>
+    </div>
+
+  </div>
+</main>
+
+<%# <div data-controller="download"> %>
+  <%# <img data-download-target="url" src="<%= @image" width="1000px" height="1000px" download> %>
+  <%# <button data-action="click->download#download">Download image</button> %>
+<%# </div> %>
+
+<%# <a href="<%= @image" download>Download image</a> %>
+
+<%# <%= @image %>

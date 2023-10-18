@@ -25,7 +25,9 @@
     <!-- END Pixel Code -->
   </head>
   <body>
-    <%= render 'shared/logo' %>
+    <% unless controller_name == 'search_preferences' && action_name == 'results' %>
+      <%= render 'shared/logo' %>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
