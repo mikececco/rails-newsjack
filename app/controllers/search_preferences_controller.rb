@@ -5,7 +5,7 @@ require 'json'
 class SearchPreferencesController < ApplicationController
   def new
     if Rails.env.production?
-    @country = request.location.country_code
+      @country = request.location.country_code
     else
       # Set a default country for non-production environments
       @country = 'US' # Or any default country code you prefer
@@ -88,7 +88,7 @@ class SearchPreferencesController < ApplicationController
 
     world = "woeid=1"
     us = "woeid=23424977"
-    request.body = world
+    request.body = world #to be CHANGED TO THE REQUESTED COUNTRY INPUT
 
     response = http.request(request)
     trying = response.read_body

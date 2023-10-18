@@ -1,0 +1,2 @@
+class GeneratePost < ApplicationRecord
+end
