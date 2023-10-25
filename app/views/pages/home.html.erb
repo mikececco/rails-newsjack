@@ -2,6 +2,10 @@
 <% content_for :title, "🚀 NewsJack is coming soon..." %>
 <% content_for :meta_description, "Newsjacking for SMEs and Solopreneurs: raise brand awareness with personalized viral content, cheap and effective." %>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
 <main>
 <div class="gradient-background page shadow p-3 my-auto">
   <div class="text-center">
@@ -66,6 +70,31 @@
   <div>
     <h2 class="fw-semibold text-center">At NewsJack,</h2>
     <h1 class="fw-bold text-center m-0 bigger">we research, ideate and create</h1>
+    <p class="text-center px-3">engaging content like this:</p>
+      <div class="container page-top">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <a href="<%= image_path('proof1.png') %>" class="fancybox" rel="ligthbox">
+                <%= image_tag "proof1.png", alt: "Engage", class: "zoom img-fluid d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy" %>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <a href="<%= image_path('proof2.png') %>" class="fancybox" rel="ligthbox">
+                <%= image_tag "proof2.png", alt: "Engage", class: "zoom img-fluid d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy" %>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <a href="<%= image_path('proof3.png') %>" class="fancybox" rel="ligthbox">
+                <%= image_tag "proof3.png", alt: "Engage", class: "zoom img-fluid d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy" %>
+              </a>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <a href="<%= image_path('proof4.png') %>" class="fancybox" rel="ligthbox">
+                <%= image_tag "proof4.png", alt: "Engage", class: "zoom img-fluid d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy" %>
+              </a>
+          </div>
+        </div>
+      </div>
     <p class="text-center px-3">on your behalf.</p>
     <div class="container col-xxl-8 text-center">
       <%= render 'shared/get_started' %>
@@ -126,6 +155,7 @@
 </main>
 
 
+
 <%# <%= link_to "New Search Preference", new_search_preference_path %>
 <script>
 window.addEventListener("scroll", function() {
@@ -143,5 +173,21 @@ window.addEventListener("scroll", function() {
   } else {
       component.style.display = "block"; // Show the component
   }
+});
+
+
+$(document).ready(function(){
+  $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+
+    $(".zoom").hover(function(){
+
+		$(this).addClass('transition');
+	}, function(){
+
+		$(this).removeClass('transition');
+	});
 });
 </script>
