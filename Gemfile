@@ -62,7 +62,7 @@ gem 'easy_translate'
 gem 'dotenv'
 gem 'friendly_id', '~> 5.4'
 gem 'redcarpet'
-
+gem "ruby-openai"
 
 
 group :development, :test do
