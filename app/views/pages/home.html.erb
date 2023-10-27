@@ -7,7 +7,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 <main>
-  <div class="gradient-background page shadow p-3 my-auto">
+  <div class="gradient-background page shadow p-3 my-auto" id="first">
     <div class="text-center">
       <div class="mb-3 py-3">
         <h1 class="text-white mx-5 text-center"><strong>Imagine your brand going viral</strong></h1>
@@ -126,7 +126,7 @@
 
 
       <%# <p class="text-center px-3">on your behalf.</p> %>
-    <div class="my-5 bg-white text-black container col-xxl-8 p-5 border shadow-lg nice-round" id="reviews">
+    <div class="my-5 bg-white text-black container p-5 border shadow-lg nice-round" id="reviews">
       <h1 class="fw-bold text-center">From our customers</h1>
       <div class="container">
         <a href="<%= image_path('proof7.png') %>" class="fancybox" rel="ligthbox">
@@ -143,6 +143,15 @@
         </a>
       </div>
     </div>
+    <div class="my-5 container p-5 text-center">
+      <h2 class="fw-semibold m-0">How we do it?</h2>
+      <p class="px-3 fw-semibold">Well...that's our little secret 👀</p>
+      <div id="arrow-container">
+        <div class="upward" data-gw-scrollto="form">
+          <div class="upward__arrow"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -155,6 +164,17 @@
 
 <%# <%= link_to "New Search Preference", new_search_preference_path %>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const upwardElement = document.querySelector(".upward");
+    const targetSection = document.querySelector("#first");
+
+    if (upwardElement && targetSection) {
+        upwardElement.addEventListener("click", function() {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
+    }
+});
+
 window.addEventListener("scroll", function() {
   // Get the component and trigger div elements
   var component = document.querySelector("#tag");
