@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_23_022125) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_27_035548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,13 +28,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_23_022125) do
     t.index ["site", "page", "date"], name: "index_active_analytics_views_per_days_on_site_and_date"
   end
 
+  create_table "generate_posts", force: :cascade do |t|
+    t.string "trend"
+    t.text "company_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mail_lists", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "resources", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
     t.text "content"
     t.string "slug"
-    t.string "categories"
     t.index ["slug"], name: "index_resources_on_slug", unique: true
   end
 

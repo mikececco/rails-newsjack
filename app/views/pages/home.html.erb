@@ -18,9 +18,9 @@
         <p class="text-white fw-medium text-center m-0">😯 Meaningful news associations for authentic brand connections</p>
         <p class="text-white fw-medium text-center m-0">😎 Captivating content expertly crafted.</p> %>
       </div>
-        <p class="text-white text-center m-0 px-3">Generate engaging social media content with one click.</p>
-        <p class="text-white-50 text-center m-0 pb-2 px-3 mb-3 fs-6 fw-normal">No more unnoticed content. Promised.</p>
-        <%= render 'shared/sign_button' %>
+      <p class="text-white text-center m-0 px-3">Generate engaging social media content with one click.</p>
+      <p class="text-white-50 text-center m-0 pb-2 px-3 mb-3 fs-6 fw-normal">No more unnoticed content. Promised.</p>
+      <%= render 'shared/sign_button' %>
         <%# <button class="btn btn-primary text-white bg-warning rounded-pill">Request access 🚀</button> %>
     </div>
   </div>
@@ -66,49 +66,86 @@
     </div>%>
   </div>
 
-  <div class="bg-primary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
+  <div class="bg-secondary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
     <div>
       <h2 class="fw-semibold text-center">At NewsJack,</h2>
       <h1 class="fw-bold text-center m-0 bigger">we research, ideate and generate</h1>
       <p class="text-center px-3">what is best for your brand:</p>
-        <div class="container">
-          <a href="<%= image_path('proof1.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof1.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
-          </a>
-          <p class="text-center px-3">by combining news</p>
-          <a href="<%= image_path('proof2.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof2.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
-          </a>
-          <p class="text-center px-3">trends</p>
-          <a href="<%= image_path('proof3.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof3.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
-          </a>
-          <p class="text-center px-3">engaging content</p>
-          <a href="<%= image_path('proof4.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof4.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
-          </a>
-          <p class="text-center px-3">and personal stories</p>
+      <div class="container">
+        <a href="<%= image_path('proof1.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof1.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
+        </a>
+        <p class="text-center px-3 fw-semibold">by combining news 📰</p>
+        <a href="<%= image_path('proof2.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof2.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
+        </a>
+        <p class="text-center px-3 fw-semibold">trends 📈</p>
+        <a href="<%= image_path('proof3.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof3.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
+        </a>
+        <p class="text-center px-3 fw-semibold">engaging content 👩‍💻</p>
+        <a href="<%= image_path('proof4.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof4.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
+        </a>
+        <p class="text-center px-3 fw-semibold">and personal stories</p>
+      </div>
+    </div>
 
-      <%# <p class="text-center px-3">on your behalf.</p> %>
-      <div class="bg-white text-black container col-xxl-8 p-5 border shadow-lg nice-round" id="reviews">
-        <h1 class="fw-bold text-center">From our customers</h1>
-        <div class="container">
-          <a href="<%= image_path('proof7.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof7.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
-          </a>
-          <a href="<%= image_path('proof6.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof6.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
-          </a>
-          <a href="<%= image_path('proof5.png') %>" class="fancybox" rel="ligthbox">
-            <%= image_tag "proof5.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
-          </a>
-        </div>
-        <div class="container col-xxl-8 text-center pt-2 mt-3">
-          <%= render 'shared/get_started' %>
+    <div class="container-fluid my-5 w-75">
+      <div class="row no-gutters">
+        <div class="col-md-12">
+          <h2 class="fw-semibold text-center m-0">aiming to</h2>
+          <h1 class="fw-bold text-center m-0 bigger">skyrocket your brand's awareness</h1>
+
+            <%#<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/2a9d1172605b442792b4ff899f204641?sid=d6f95d21-2819-4f21-bf96-e3d780d67f61" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+          <div class="d-flex justify-content-between align-items-center breaking-news bg-transparent mt-3">
+            <div class="d-flex flex-row flex-grow-1 flex-fill align-items-center justify-content-center">
+              <span class="badge border border-danger bg-danger text-white px-1 custom-disabled-button">Trending now</span>
+            </div>
+            <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">#elon 6290 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Donald Trump Jr." 13.9k posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Figma" 5109 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">#DataAnalytics 1035 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"GPT-4" 2573 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Code Llama" 4797 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Israel" 310.9k posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">#elon 6290 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Donald Trump Jr." 13.9k posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Figma" 5109 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">#DataAnalytics 1035 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"GPT-4" 2573 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Code Llama" 4797 posts</span>
+              <span class="badge border border-black-50 bg-transparent text-black-50 px-1">"Marketing" 31.2k posts</span>
+            </marquee>
+          </div>%>
         </div>
       </div>
     </div>
+    <div class="container col-xxl-8 text-center py-2 my-3">
+      <%= render 'shared/sign_button' %>
+    </div>
+
+
+      <%# <p class="text-center px-3">on your behalf.</p> %>
+    <div class="my-5 bg-white text-black container col-xxl-8 p-5 border shadow-lg nice-round" id="reviews">
+      <h1 class="fw-bold text-center">From our customers</h1>
+      <div class="container">
+        <a href="<%= image_path('proof7.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof7.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
+        </a>
+        <a href="<%= image_path('proof6.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof6.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
+        </a>
+        <a href="<%= image_path('proof5.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof5.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"300", loading:"lazy" %>
+        </a>
+      </div>
+    </div>
   </div>
+</div>
+
   <a class="tag" id="tag" target="_blank" href="https://twitter.com/mikececconello">
 		by @mikececconello
 	</a>
@@ -128,7 +165,7 @@ window.addEventListener("scroll", function() {
   var triggerDivPosition = triggerDiv.getBoundingClientRect();
 
   // Check if the trigger div is in the viewport
-  if (triggerDivPosition.bottom <= window.innerHeight) {
+  if (triggerDivPosition.top <= window.innerHeight) {
       component.style.display = "none"; // Hide the component
   } else {
       component.style.display = "block"; // Show the component
@@ -150,4 +187,36 @@ $(document).ready(function(){
 		$(this).removeClass('transition');
 	});
 });
+
+$(document).ready(function() {
+  $('#submitBtn').on('click', function(e) {
+    e.preventDefault(); // Prevent the form from submitting immediately
+
+    // Serialize the form data into a JSON object
+    var formData = $('form').serializeArray();
+    var jsonFormData = {};
+    $.each(formData, function() {
+      jsonFormData[this.name] = this.value;
+    });
+
+    // Send the form data as JSON via AJAX
+    $.ajax({
+      type: 'POST',
+      url: '/emails', // Your form submission URL
+      contentType: 'application/json', // Set the content type to JSON
+      data: JSON.stringify(jsonFormData), // Convert the form data to JSON
+      dataType: 'json', // Specify that you expect JSON in response
+      success: function(data) {
+        // Handle the JSON response here
+        console.log("Submitted successfully");
+      },
+      error: function(xhr, status, error) {
+        console.error("Submission failed:", error);
+        // Handle errors if the form submission fails
+      }
+    });
+    return false;
+  });
+});
+
 </script>
