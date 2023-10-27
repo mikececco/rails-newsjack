@@ -5,10 +5,15 @@ class PagesController < ApplicationController
     email = MailList.new(email: params[:email])
     if email.save
       # If the email is saved successfully, you can redirect to a success page or show a flash message.
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json { render json: { message: "Email saved successfully" }, status: :ok }
+      end
     else
-      # If there are validation errors, you can render the form again with error messages.
-      render 'new' # Replace 'new' with the name of your form view.
+      respond_to do |format|
+        format.html { render 'home' }
+        format.json { render json: { errors: email.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
 
   end

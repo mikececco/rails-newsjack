@@ -66,7 +66,7 @@
     </div>%>
   </div>
 
-  <div class="bg-secondary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
+  <div class="bg-primary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
     <div>
       <h2 class="fw-semibold text-center">At NewsJack,</h2>
       <h1 class="fw-bold text-center m-0 bigger">we research, ideate and generate</h1>
@@ -122,9 +122,6 @@
           </div>%>
         </div>
       </div>
-    </div>
-    <div class="container col-xxl-8 text-center py-2 my-3">
-      <%= render 'shared/sign_button' %>
     </div>
 
 
@@ -198,7 +195,6 @@ $(document).ready(function() {
     $.each(formData, function() {
       jsonFormData[this.name] = this.value;
     });
-
     // Send the form data as JSON via AJAX
     $.ajax({
       type: 'POST',
