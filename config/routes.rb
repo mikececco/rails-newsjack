@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :resources, param: :id
 
   post 'emails', to: 'pages#submit_email'
+  resources :generate_posts
 end
