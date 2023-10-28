@@ -1,5 +1,5 @@
-<a data-tf-popup="R5uzSO6z" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Try NewsJack" data-tf-transitive-search-params data-tf-medium="snippet" class="custom-link btn btn-lg text-white bg-primary rounded-pill border border-warning">
-  Early access 🚀
-</a>
-
-<%# <button data-tf-popup="R5uzSO6z" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Try NewsJack" data-tf-transitive-search-params data-tf-medium="snippet" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#0445AF;color:#fff;font-size:20px;border-radius:25px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">Try me!</button> %>
+<form class="flex w-full max-w-md flex-col items-center gap-3 sm:flex-row" action="/emails" method="post">
+  <input class="flex w-full border border-input px-3 py-2 text-sm text-black" placeholder="Email address" required="" type="email" name="email">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <button id="submitBtn" class="inline-flex items-center justify-center text-white bg-primary px-3 py-2 w-full custom-link rounded-pill border border-warning" type="submit" data-tf-popup="R5uzSO6z" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Try NewsJack" data-tf-transitive-search-params data-tf-medium="snippet">Try it out 🚀</button>
+</form>

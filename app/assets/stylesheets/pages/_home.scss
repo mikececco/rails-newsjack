@@ -142,6 +142,15 @@ p {
   font-size: 20px;
 }
 
+input {
+  margin-bottom: 10px;
+  padding: 10px 0 10px 20px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-radius: 50px;
+}
+
 @media (max-width: 768px) {
   .svg-image {
     width: 60px;
@@ -254,10 +263,10 @@ p {
   border: 2px solid #FD1015;
 }
 
-.bg-white:hover {
-  --bs-bg-opacity: 0.9; /* Increase opacity value on hover */
-  transition: --bs-bg-opacity 0.3s ease; /* Add smooth transition effect */
-}
+// .bg-white:hover {
+//   --bs-bg-opacity: 0.9; /* Increase opacity value on hover */
+//   transition: --bs-bg-opacity 0.3s ease; /* Add smooth transition effect */
+// }
 
 .news-scroll a {
   text-decoration: none;
@@ -306,4 +315,121 @@ p {
 i.awesome {
 
   animation: colorchange 20s infinite alternate;
+}
+
+.tag {
+  display: block;
+  padding: 7px;
+  font-size: 12px;
+  margin: 0;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid 1px solid rgba(0,0,0,0.125);
+  border-left: 1px solid 1px solid rgba(0,0,0,0.125);
+  border-top-right-radius: 12px;
+  z-index: 99;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#statement {
+  display: block;
+}
+
+.upward {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  transition: .3s all;
+}
+
+
+.upward:after {
+  content: "";
+  display: block;
+  background-color: rgba(246, 251, 255, 0.1);
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: -1;
+  pointer-events: none;
+  transition: .3s all;
+}
+
+.upward__arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.upward__arrow:after {
+  content: "";
+  display: block;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2015738/arrow_color_blue.png) no-repeat;
+  width: 18px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: .3s all;
+  opacity: 1;
+}
+
+.upward__arrow:before {
+  content: "";
+  display: block;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2015738/arrow_color_white.png) no-repeat;
+  width: 18px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  transition: .3s all;
+  opacity: 0;
+}
+
+.upward:hover {
+  background-color: #a48df9;
+}
+
+.upward:hover:after {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.upward:hover .upward__arrow:after {
+  opacity: 0;
+}
+
+.upward:hover .upward__arrow:before {
+  opacity: 1;
+}
+#arrow-container{
+  margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
