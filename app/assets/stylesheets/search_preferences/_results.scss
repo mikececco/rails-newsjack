@@ -98,6 +98,16 @@
   box-sizing: border-box;
 }
 
+#loading-bar {
+  display: none;
+}
+[aria-busy="true"] #loading-bar  {
+  display: block;
+}
+[aria-busy="true"] #search-preference-form {
+   display: none;
+  }
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
