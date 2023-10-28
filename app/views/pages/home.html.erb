@@ -11,7 +11,7 @@
     <div class="text-center">
       <div class="mb-3 py-3">
         <h1 class="text-white mx-5 text-center"><strong>Imagine your brand going viral</strong></h1>
-        <h2 class="text-white mx-5 fw-medium text-center">Seamlessly with <i class="awesome">newsjacking</i></h2>
+        <h2 class="text-white mx-5 fw-medium text-center">thanks to <a href="https://sproutsocial.com/glossary/newsjacking/#:~:text=Newsjacking%20is%20a%20term%20coined,opinions%20into%20breaking%20news%20stories." target="_blank" rel="noopener noreferrer" class="link-opacity-100"><i>newsjacking</i></a></h2>
         <%# <h3 class="text-light-gray mx-5 fw-medium text-center"> With a <i>click
               <%= image_tag 'tilt.gif', width: 50, height: 50, class: 'svg-image' %>
         <%# <p class="text-white fw-medium text-center m-0">🧐 24/7 news monitoring for organic brand integration</p>
@@ -73,20 +73,20 @@
 
   <div class="bg-primary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
     <div>
-      <h2 class="fw-semibold text-center">At NewsJack,</h2>
-      <h1 class="fw-bold text-center m-0 bigger">we research, ideate and generate</h1>
+      <h2 class="fw-semibold text-center">At NewsJack</h2>
+      <h1 class="fw-bold text-center m-0 bigger">we analyze, ideate and generate</h1>
       <p class="text-center px-3">what is best for your brand:</p>
       <div class="container">
+        <a href="<%= image_path('proof9.png') %>" class="fancybox" rel="ligthbox">
+          <%= image_tag "proof9.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
+        </a>
+        <p class="text-center px-3 fw-semibold">by combining trends 📈</p>
         <a href="<%= image_path('proof1.png') %>" class="fancybox" rel="ligthbox">
           <%= image_tag "proof1.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
         </a>
-        <p class="text-center px-3 fw-semibold">by combining news 📰</p>
+        <p class="text-center px-3 fw-semibold">your product ⚒️</p>
         <a href="<%= image_path('proof2.png') %>" class="fancybox" rel="ligthbox">
           <%= image_tag "proof2.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
-        </a>
-        <p class="text-center px-3 fw-semibold">trends 📈</p>
-        <a href="<%= image_path('proof9.png') %>" class="fancybox" rel="ligthbox">
-          <%= image_tag "proof9.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid mx-lg-auto", width:"400", height:"400", loading:"lazy" %>
         </a>
         <p class="text-center px-3 fw-semibold">engaging content 👩‍💻</p>
         <a href="<%= image_path('proof4.png') %>" class="fancybox" rel="ligthbox">
@@ -175,69 +175,14 @@
       </div>
     </div>
   </div>
-</div>
-
-<%# <div class="bg-primary text-white container col-xxl-8 p-5 border shadow-lg nice-round">
-  <div>
-    <h2 class="fw-semibold text-center">At NewsJack,</h2>
-    <h1 class="fw-bold text-center m-0 bigger">we research, ideate and create</h1>
-    <p class="text-center px-3">on your behalf.</p>
-    <div class="container col-xxl-8 text-center">
-      <%= render 'shared/get_started'
-    </div>
-  </div>
-  <div class="row flex-lg-row-reverse align-items-center justify-content-center p-3 mt-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag "1.png", alt: "Set up", class: "d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy"
-    </div>
-    <div class="col-lg-6 text-center">
-      <h2 class="fw-semibold text-center">Set up</h2>
-      <p class="lead">Define the essence of your brand and your goals.</p>
-    </div>
-  </div>
-  <div class="row flex-lg-row align-items-center justify-content-center p-3 mt-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-    <%= image_tag "2.png", alt: "Trends", class: "d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy"
-    </div>
-    <div class="col-lg-6 text-center">
-      <h2 class="fw-semibold text-center">We identify opportunities</h2>
-      <p class="lead px-5">Get trends complementing your brand story.</p>
-    </div>
-  </div>
-  <div class="row flex-lg-row-reverse align-items-center justify-content-center p-3 mt-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag "3.png", alt: "Generate", class: "d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy"
-    </div>
-    <div class="col-lg-6 text-center">
-      <h2 class="fw-semibold text-center">We generate unique content.</h2>
-      <p class="lead">Generate and edit <br>engaging social media content <br>in seconds.</p>
-    </div>
-  </div>
-  <div class="row flex-lg-row align-items-center justify-content-center p-3 mt-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag "4.png", alt: "Publish", class: "d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy"
-    </div>
-    <div class="col-lg-6 text-center">
-      <h2 class="fw-semibold text-center">Publish</h2>
-      <p class="lead px-5 muted">Share it and watch the traffic increase.</p>
-    </div>
-  </div>
-  <div class="row flex-lg-row-reverse align-items-center justify-content-center p-3 mt-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <%= image_tag "5.png", alt: "Engage", class: "d-block mx-lg-auto img-fluid", width:"700", height:"500", loading:"lazy"
-    </div>
-    <div class="col-lg-6 text-center">
-      <h2 class="fw-semibold text-center">Engage</h2>
-      <p class="lead">Respond to comments, answer questions, and encourage discussions.</p>
-    </div>
-  </div>
-  <div class="container col-xxl-8 text-center">
-    <%= render 'shared/sign_button_white'
-  </div>
-</div> %>
   <a class="tag" id="tag" target="_blank" href="https://twitter.com/mikececconello">
 		by @mikececconello
 	</a>
+
+  <!-- Calendly inline widget begin -->
+<div id="calendly" class="calendly-inline-widget" data-url="https://calendly.com/hellonewsjack/30min?primary_color=ffb500" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
 </main>
 
 
