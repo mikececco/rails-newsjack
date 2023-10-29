@@ -12,7 +12,7 @@ eagerLoadControllersFrom("controllers", application)
 document.addEventListener("click", function(e) {
   if (e.target && e.target.classList.contains("select-trend")) {
     const selectedTrend = e.target.getAttribute("data-trend");
-    const isDisabled = e.target.getAttribute("data-disabled") === "true";
+    const isDisabled = e.target.getAttribute("data-disabled") === true;
     document.getElementById("selected-trend-field").value = selectedTrend;
 
     console.log(selectedTrend);

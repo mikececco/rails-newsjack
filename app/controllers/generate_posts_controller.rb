@@ -1,17 +1,23 @@
 class GeneratePostsController < ApplicationController
+  def index
+    @images = GeneratePost.all
+  end
   def create
     @generate_post = GeneratePost.new(generate_post_params)
     @image = stability(@generate_post)
 
-    puts generate_post_params
-
-
+    sleep 2
+    
     respond_to do |format|
       if @generate_post.save
-        # format.html { redirect_to @generate_post}
-        format.html { render partial: 'generated' }
-        format.json { render json: @generate_post, status: :created }
-        format.js   # Render a JavaScript response (used for AJAX)
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.update(:results, partial: "generated",
+            locals: { image: @image, post: @generate_post }, status: :accepted)
+        end
+        # format.html { redirect_to generate_posts_url}
+        # format.html { render partial: 'generated' }
+        # format.json { render json: @generate_post, status: :created }
+        # format.js   # Render a JavaScript response (used for AJAX)
       else
         format.html { render :new }
         format.json { render json: @generate_post.errors, status: :unprocessable_entity }

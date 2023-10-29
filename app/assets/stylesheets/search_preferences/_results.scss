@@ -107,6 +107,9 @@
 [aria-busy="true"] #search-preference-form {
    display: none;
   }
+[aria-busy="true"] #results {
+   display: none;
+  }
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
@@ -3021,8 +3024,7 @@ textarea.form-control-lg {
     transition: none;
   }
 }
-
-.form-check-input[type="checkbox"] {
+.form-check-input[type="c+heckbox"] {
   border-radius: 0.35rem;
 }
 

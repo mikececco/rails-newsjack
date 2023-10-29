@@ -25,11 +25,13 @@
     <!-- END Pixel Code -->
   </head>
   <body>
-    <% unless controller_name == 'search_preferences' && action_name == 'results' %>
+    <% unless controller_name == 'search_preferences' %>
       <%= render 'shared/logo' %>
     <% end %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <% unless controller_name == 'search_preferences' %>
+      <%= render 'shared/footer' %>
+    <% end %>
     <script src="//embed.typeform.com/next/embed.js"></script>
   </body>
 </html>
