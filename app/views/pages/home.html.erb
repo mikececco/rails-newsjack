@@ -18,7 +18,7 @@
         <p class="text-white fw-medium text-center m-0">😯 Meaningful news associations for authentic brand connections</p>
         <p class="text-white fw-medium text-center m-0">😎 Captivating content expertly crafted.</p> %>
       </div>
-      <p class="text-white text-center m-0 px-3">Generate engaging social media content with one click.</p>
+      <p class="text-white text-center m-0 px-3">We ensure new people engage with your content.</p>
       <p class="text-white-50 text-center m-0 pb-2 px-3 mb-3 fs-6 fw-normal">No more unnoticed content. Promised.</p>
       <%= render 'shared/sign_button' %>
         <%# <button class="btn btn-primary text-white bg-warning rounded-pill">Request access 🚀</button> %>
@@ -215,29 +215,40 @@ $(document).ready(function() {
   $('#submitBtn').on('click', function(e) {
     e.preventDefault(); // Prevent the form from submitting immediately
 
+    var emailValue = $('input[name="email"]').val();
+
+    var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (emailRegex.test(emailValue)) {
+      console.log('Valid email address: ' + emailValue);
+      var formData = $('form').serializeArray();
+      var jsonFormData = {};
+      $.each(formData, function() {
+        jsonFormData[this.name] = this.value;
+      });
+      // Send the form data as JSON via AJAX
+      $.ajax({
+        type: 'POST',
+        url: '/emails', // Your form submission URL
+        contentType: 'application/json', // Set the content type to JSON
+        data: JSON.stringify(jsonFormData), // Convert the form data to JSON
+        dataType: 'json', // Specify that you expect JSON in response
+        success: function(data) {
+          // Handle the JSON response here
+          console.log("Submitted successfully");
+          window.location.href = 'https://smbkjmbddzz.typeform.com/to/R5uzSO6z'
+        },
+        error: function(xhr, status, error) {
+          console.error("Submission failed:", error);
+          // Handle errors if the form submission fails
+        }
+      });
+      return false;
+    } else {
+      $('#errorDiv').text('Invalid email address');
+    }
+
     // Serialize the form data into a JSON object
-    var formData = $('form').serializeArray();
-    var jsonFormData = {};
-    $.each(formData, function() {
-      jsonFormData[this.name] = this.value;
-    });
-    // Send the form data as JSON via AJAX
-    $.ajax({
-      type: 'POST',
-      url: '/emails', // Your form submission URL
-      contentType: 'application/json', // Set the content type to JSON
-      data: JSON.stringify(jsonFormData), // Convert the form data to JSON
-      dataType: 'json', // Specify that you expect JSON in response
-      success: function(data) {
-        // Handle the JSON response here
-        console.log("Submitted successfully");
-      },
-      error: function(xhr, status, error) {
-        console.error("Submission failed:", error);
-        // Handle errors if the form submission fails
-      }
-    });
-    return false;
   });
 });
 
