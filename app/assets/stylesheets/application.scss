@@ -11,6 +11,21 @@
 @import "components/index";
 @import "pages/index";
 
-h1, h2, h3, h4, p, span, input[type="submit"] {
-  font-family: Inter, sans-serif;
+@font-face {
+  font-family: 'Hezaedrus';
+  src: font-url('Hezaedrus.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Hezaedrus-Medium';
+  src: font-url('Hezaedrus-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Hezaedrus-Bold';
+  src: font-url('Hezaedrus-Bold.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6, p, span, input[type="submit"], button {
+  // font-family: Inter, sans-serif;
+  font-family: 'Hezaedrus', Arial, sans-serif;
 }

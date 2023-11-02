@@ -4,10 +4,11 @@ class GeneratePostsController < ApplicationController
   end
   def create
     @generate_post = GeneratePost.new(generate_post_params)
-    @image = stability(@generate_post)
+    # @image = stability(@generate_post)
+    @image = post
 
     sleep 2
-    
+
     respond_to do |format|
       if @generate_post.save
         format.turbo_stream do
@@ -25,6 +26,36 @@ class GeneratePostsController < ApplicationController
       end
     end
 
+  end
+
+  def post
+    image_path = ActionController::Base.helpers.asset_path('favicon2.svg')
+    html_content =
+      "<html>
+        <body>
+          <div class=\"element\">
+            <div class=\"element-x\">
+                <p class=\"how-to-develop-a\">-HOW TO DEVELOP A STARTUPPERS MINDSET &amp; NOTICE IDEAS AROUND YOU?</p>
+                <div class=\"text-wrapper\">Interview</div>
+                <div class=\"div\">John Wain</div>
+                <div class=\"text-wrapper-2\">EMOJI IMG</div>
+                <div class=\"group\">
+                    <img class=\"img\" src=\"#{image_path}\" alt=\"Image Description\">
+                </div>
+            </div>
+          </div>
+        </body>
+      </html>"
+
+
+    @kit = IMGKit.new(html_content)
+    @kit.stylesheets << '/home/mikececco/rails-newsjack/app/assets/stylesheets/search_preferences/_new.scss'
+
+    image_path = 'public/images/image.png'
+    @kit.to_file(image_path)
+
+    # Now you can pass the image path to your view
+    image_path
   end
 
   def stability(input)
@@ -84,6 +115,6 @@ class GeneratePostsController < ApplicationController
   private
 
   def generate_post_params
-    params.require(:generate_post).permit(:company_description, :trend)
+    params.require(:generate_post).permit(:company_website_url, :trend)
   end
 end

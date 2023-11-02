@@ -1,6 +1,6 @@
 <form class="flex w-full max-w-md flex-col items-center gap-3 sm:flex-row" action="/emails" method="post">
   <input class="flex w-full border border-input px-3 py-2 text-sm text-black rounded-4" placeholder="Email address" required type="email" name="email">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <button id="submitBtn" class="inline-flex items-center justify-center text-white bg-primary px-3 py-2 w-full custom-link rounded-4 border border-warning" type="submit">Try it out</button>
+  <button id="submitBtn" class="fw-normal inline-flex items-center justify-center text-white bg-primary w-full custom-link rounded-4 border border-warning" type="submit">Try it out</button>
 </form>
 <div id="errorDiv" style="color: red;" class=""></div>

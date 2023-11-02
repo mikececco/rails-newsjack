@@ -113,14 +113,17 @@
 // // }
 
 .custom-link {
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  // box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
   display: inline-block;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease;
+  // transition: box-shadow 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-size: .875rem;
+  overflow: hidden;
 }
 
 .custom-link:hover {
-  box-shadow: none;
+  // box-shadow: none;
   filter: invert(1);
 }
 

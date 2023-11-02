@@ -98,6 +98,11 @@
   box-sizing: border-box;
 }
 
+body {
+  //   margin: 0;
+  font-family: 'Hezaedrus', Arial, sans-serif;
+}
+
 #loading-bar {
   display: none;
 }
@@ -10513,7 +10518,7 @@ textarea.form-control.is-invalid {
 }
 
 .fw-normal {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 
 .fw-bold {
