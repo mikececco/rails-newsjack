@@ -38,8 +38,8 @@ class SearchPreferencesController < ApplicationController
 
       cached_scraper = Rails.cache.read(scraper_cache_key)
       if today_search_preference && cached_scraper.present?
-        @scraper = cached_data[:scraper]
-        @twitter_trends = cached_data[:twitter_trends]
+        @scraper = cached_scraper[:scraper]
+        @twitter_trends = cached_scraper[:twitter_trends]
       else
         @scraper.country_code = @search_preference.country_code
         @scraper.country_name = @scraper.set_country(@search_preference.country_code)
