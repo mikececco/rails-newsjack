@@ -16,7 +16,7 @@ class TwitterTrends < ApplicationController
 
     request = Net::HTTP::Post.new(url)
     request["content-type"] = 'application/x-www-form-urlencoded'
-    request["X-RapidAPI-Key"] = 'd0b234fca2msh13cd8d70484e26fp1473e2jsnea0cb42a106e'
+    request["X-RapidAPI-Key"] = ENV["RAPID_KEY"]
     request["X-RapidAPI-Host"] = 'twitter-trends5.p.rapidapi.com'
 
     request.body = "woeid=#{@woeid}"
