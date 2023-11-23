@@ -157,3 +157,9 @@
   letter-spacing: 0;
   line-height: normal;
 }
+[aria-busy="true"] #search-preference-form {
+  display: none;
+ }
+[aria-busy="true"] #results {
+  display: none;
+ }

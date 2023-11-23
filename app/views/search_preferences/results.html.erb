@@ -9,130 +9,16 @@
           <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
             <div class="card">
               <div class="pb-0 p-3 mb-4">
-                <div class="pb-0 p-3 mb-4">
-                  <div class="row">
-                    <div>
-                    <h6>Select trend</h6>
-                      <div class="table-responsive scrollarea">
-                        <table class="table align-items-center mb-0">
-                          <thead>
-                            <tr>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Select</th>
-                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trends</th>
-                              <%# <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Platform</th> %>
-                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stats</th>
-                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hype</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <% translated_news_array = [] %>
-                            <% @new_hash.first(10).each do |index, news_item| %>
-                              <% translated_news = news_item[:translated] == (false || nil) ? news_item[:news] : news_item[:translated] %>
-                              <% translated_news_array << translated_news if translated_news.present? %>
-                              <tr>
-                                <td>
-                                  <button class="select-trend btn btn-sm mb-0 px-3 py-2 w-full rounded-4 border" data-trend="<%= translated_news %>">Select</button>
-                                </td>
-                                <td>
-                                  <div class="d-flex px-2 py-1">
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm"><%= truncate(translated_news, length: 20) %></h6>
-                                    </div>
-                                  </div>
-                                </td>
-                                <%# <td>
-                                  <div class="avatar-group mt-2">
-                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                      <img src="../assets/img/team-1.jpg" alt="team1">
-                                    </a>
-                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                      <img src="../assets/img/team-2.jpg" alt="team2">
-                                    </a>
-                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                                      <img src="../assets/img/team-3.jpg" alt="team3">
-                                    </a>
-                                    <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                      <img src="../assets/img/team-4.jpg" alt="team4">
-                                    </a>
-                                  </div>
-                                </td> %>
-                                <td class="align-middle text-center text-sm">
-                                  <span class="text-xs font-weight-bold"><%= truncate(news_item[:url], length: 20) %></span>
-                                </td>
-                                <td class="align-middle">
-                                  <div class="progress-wrapper w-75 mx-auto">
-                                    <div class="progress-info">
-                                      <div class="progress-percentage">
-                                        <span class="text-xs font-weight-bold"><%= truncate(translated_news, length: 10) %></span>
-                                      </div>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            <% end %>
-                            <% @twitter_trends.each do |trend| %>
-                              <% translated_news_array << trend[0] %>
-                                <tr>
-                                  <td>
-                                    <button class="select-trend btn btn-sm mb-0 px-3 py-2 w-full rounded-4 border" data-trend="<%= trend[0] %>">Select</button>
-                                  </td>
-                                  <td>
-                                    <div class="d-flex px-2 py-1">
-                                      <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm"><%= truncate(trend[0], length: 20) %></h6>
-                                      </div>
-                                    </div>
-                                  </td>
-                                  <%# <td>
-                                    <div class="avatar-group mt-2">
-                                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                                        <img src="../assets/img/team-1.jpg" alt="team1">
-                                      </a>
-                                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                                        <img src="../assets/img/team-2.jpg" alt="team2">
-                                      </a>
-                                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                                        <img src="../assets/img/team-3.jpg" alt="team3">
-                                      </a>
-                                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                                        <img src="../assets/img/team-4.jpg" alt="team4">
-                                      </a>
-                                    </div>
-                                  </td> %>
-                                  <td class="align-middle text-center text-sm">
-                                    <span class="text-xs font-weight-bold"><%= trend[1] %> tweets</span>
-                                  </td>
-                                  <td class="align-middle">
-                                    <div class="progress-wrapper w-75 mx-auto">
-                                      <div class="progress-info">
-                                        <div class="progress-percentage">
-                                          <span class="text-xs font-weight-bold">+20%</span>
-                                        </div>
-                                      </div>
-                                      <div class="progress">
-                                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                </tr>
-                            <% end %>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <%= simple_form_for GeneratePost.new, data: { controller: 'generate' } do |form| %>
+                <%# COPY PASTE HERE table-trends.erb %>
+                <%= simple_form_for GeneratePost.new, data: { controller: 'generate_posts' } do |form| %>
                   <div class="col-md-12 mb-lg-0 mb-4">
                     <div class="mt-4">
                       <div class="pb-0 p-3 mb-4">
                         <div class="row">
                           <div>
-                            <%= content_tag :h6, "Company information" %>
-                            <%= form.text_field :company_website_url, class: "form-control", id: "no-shadow-form", placeholder: "We 10x brand awareness for SMEs and solopreneurs with viral content thanks to newsjacking and AI...", required: true %>
+                            <%= content_tag :h6, "Company website" %>
+                            <%= form.text_field :company_website_url, class: "form-control", id: "no-shadow-form", placeholder: "https://www.newsjack.me/", required: true %>
+                            <%# placeholder: "We 10x brand awareness for SMEs and solopreneurs with viral content thanks to newsjacking and AI..." %>
                           </div>
                           <%= form.hidden_field :trend, id: 'selected-trend-field' %> <!-- Hidden field to store selected trend -->
                         </div>
@@ -140,13 +26,21 @@
                       <div class="pb-0 p-3 mb-4">
                         <div class="row">
                           <div>
-                          <%= content_tag :h6, "Writing style" %>
-                          <%= form.text_field :company_website_url, class: "form-control", id: "no-shadow-form", placeholder: "Copy-paste text from your past content across different social media channels like LinkedIn, Twitter...", required: true %>
+                          <%= content_tag :h6, "Your LinkedIn or Twitter" %>
+                          <%= form.text_field :social_media_url, class: "form-control", id: "no-shadow-form", placeholder: "We get your writing style otherwise we create it...", required: true %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pb-0 p-3 mb-4">
+                        <div class="row">
+                          <div>
+                          <%= content_tag :h6, "Topic or get inspired" %>
+                          <%= form.text_field :topic, class: "form-control", id: "no-shadow-form", placeholder: "Leave blank to get inspired based on your company", required: true %>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-12 text-end">
-                        <%= form.button :button, type: "submit", class: "text-white bg-primary px-3 py-2 w-full rounded-4 border border-warning", data: { action: "click->generate#reset" } do %>
+                        <%= form.button :button, type: "submit", id:"submitGenerate", class: "text-white bg-primary px-3 py-2 w-full rounded-4 border border-warning", data: { action: "click->generate#reset" } do %>
                           Generate 🪄
                         <% end %>
                       </div>
@@ -158,14 +52,17 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="card h-100">
-              <div class="p-3 mb-4 pb-0">
+              <div class="p-3 pb-0">
                 <h6>Preview</h6>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body p-3 text-center">
                 <div class="d-flex justify-content-center">
                   <div class="spinner-border mb-3" id="loading-bar" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div>
+                </div>
+                <div id="text-spinner">
+                  <span id="element"></span>
                 </div>
                 <div id="results">
                   <turbo-stream action="update" target="results">
@@ -182,4 +79,61 @@
       </div>
     </turbo-frame>
   </main>
+  <script>
+      document.getElementById('submitGenerate').addEventListener('click', function (e) {
+
+        var typed = new Typed('#element', {
+          strings: ['Choosing among trending topics for your brand.', 'Adding your brand voice.', 'Generating engaging content.'],
+            typeSpeed: 50,
+            loopCount: Infinity
+        });
+
+
+        // Scroll to the element with the ID "results"
+        var resultsElement = document.getElementById('results');
+        if (resultsElement) {
+          resultsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    $(document).ready(function() {
+      $('#submitBtn').on('click', function(e) {
+        e.preventDefault(); // Prevent the form from submitting immediately
+
+        var emailValue = $('input[name="email"]').val();
+
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (emailRegex.test(emailValue)) {
+          console.log('Valid email address: ' + emailValue);
+          var formData = $('form').serializeArray();
+          var jsonFormData = {};
+          $.each(formData, function() {
+            jsonFormData[this.name] = this.value;
+          });
+          // Send the form data as JSON via AJAX
+          $.ajax({
+            type: 'POST',
+            url: '/emails', // Your form submission URL
+            contentType: 'application/json', // Set the content type to JSON
+            data: JSON.stringify(jsonFormData), // Convert the form data to JSON
+            dataType: 'json', // Specify that you expect JSON in response
+            success: function(data) {
+              // Handle the JSON response here
+              console.log("Submitted successfully");
+            },
+            error: function(xhr, status, error) {
+              console.error("Submission failed:", error);
+              // Handle errors if the form submission fails
+            }
+          });
+          return false;
+        } else {
+          $('#errorDiv').text('Invalid email address');
+        }
+
+        // Serialize the form data into a JSON object
+      });
+    });
+  </script>
 </body>

@@ -20,7 +20,8 @@
       </div>
       <p class="text-white text-center m-0 px-3">We ensure new people engage with your content.</p>
       <p class="text-white-50 text-center m-0 pb-2 px-3 mb-3 fs-6 fw-normal">No more unnoticed content. Promised.</p>
-      <%= render 'shared/sign_button' %>
+      <a href="#demo" class="btn fw-normal inline-flex items-center justify-center text-primary bg-outline-primary w-full custom-link rounded-4 border border-warning me-5">Watch demo</a>
+      <a href="/search_preferences/new" class="btn fw-normal inline-flex items-center justify-center text-white bg-primary w-full custom-link rounded-4 border border-warning">Try for free</a>
         <%# <button class="btn btn-primary text-white bg-warning rounded-pill">Request access 🚀</button> %>
     </div>
   </div>
@@ -68,7 +69,9 @@
 
   <div class="bg-primary text-white container col-md-8 col-12 p-md-5 p-3 pt-5 border shadow-lg nice-round">
     <div>
-      <h2 class="fw-semibold text-center">At NewsJack</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.tella.tv/video/clois47gb027p0fieacrte2wt/embed?b=0&title=0&a=1&loop=1&t=0&muted=0" allowfullscreen allowtransparency></iframe></div>
+
+      <h2 class="fw-semibold text-center mt-5">At NewsJack</h2>
       <h1 class="fw-bold text-center m-0 bigger">we analyze, ideate and generate</h1>
       <p class="text-center px-3">what is best for your brand:</p>
       <div class="container">
@@ -178,6 +181,7 @@
 <div id="calendly" class="calendly-inline-widget" data-url="https://calendly.com/hellonewsjack/30min?primary_color=ffb500" style="min-width:320px;height:700px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end --> %>
+
 </main>
 
 
@@ -226,47 +230,6 @@ $(document).ready(function(){
 
 		$(this).removeClass('transition');
 	});
-});
-
-$(document).ready(function() {
-  $('#submitBtn').on('click', function(e) {
-    e.preventDefault(); // Prevent the form from submitting immediately
-
-    var emailValue = $('input[name="email"]').val();
-
-    var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-    if (emailRegex.test(emailValue)) {
-      console.log('Valid email address: ' + emailValue);
-      var formData = $('form').serializeArray();
-      var jsonFormData = {};
-      $.each(formData, function() {
-        jsonFormData[this.name] = this.value;
-      });
-      // Send the form data as JSON via AJAX
-      $.ajax({
-        type: 'POST',
-        url: '/emails', // Your form submission URL
-        contentType: 'application/json', // Set the content type to JSON
-        data: JSON.stringify(jsonFormData), // Convert the form data to JSON
-        dataType: 'json', // Specify that you expect JSON in response
-        success: function(data) {
-          // Handle the JSON response here
-          console.log("Submitted successfully");
-          window.location.href = 'https://smbkjmbddzz.typeform.com/to/R5uzSO6z'
-        },
-        error: function(xhr, status, error) {
-          console.error("Submission failed:", error);
-          // Handle errors if the form submission fails
-        }
-      });
-      return false;
-    } else {
-      $('#errorDiv').text('Invalid email address');
-    }
-
-    // Serialize the form data into a JSON object
-  });
 });
 
 </script>

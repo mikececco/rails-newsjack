@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   post 'emails', to: 'pages#submit_email'
   resources :generate_posts
+  get 'download', to: 'generate_posts#download'
 end

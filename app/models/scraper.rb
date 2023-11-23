@@ -7,6 +7,7 @@ require 'easy_translate'
 require 'dotenv/load'
 
 class Scraper < ApplicationRecord
+  has_one :search_preference
 
   def set_country(country)
     @country = country

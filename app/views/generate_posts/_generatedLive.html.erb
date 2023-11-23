@@ -1,0 +1,93 @@
+<div class="align-middle">
+  <div class="progress-wrapper w-75 mx-auto">
+    <div class="progress-info">
+      <div class="progress-percentage">
+        <span class="text-xs font-weight-bold">Trending: 87%</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar bg-gradient-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  <div class="progress-wrapper w-75 mx-auto">
+    <div class="progress-info">
+      <div class="progress-percentage">
+        <span class="text-xs font-weight-bold">Brand affinity: 93%</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar bg-gradient-secondary w-90" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  <div class="progress-wrapper w-75 mx-auto">
+    <div class="progress-info">
+      <div class="progress-percentage">
+        <span class="text-xs font-weight-bold">Potential impressions: 5~12k</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  <div class="progress-wrapper w-75 mx-auto">
+    <div class="progress-info">
+      <div class="progress-percentage">
+        <span class="text-xs font-weight-bold">Timeframe: <span id="timer">17h</span></span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar bg-gradient-warning w-15" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+</div>
+<div class="mt-3">
+  <p>Just like Lionel Messi's Balon d'Or win, Ginzo sushi restaurant sets the standard for excellence.
+  Here is how we make our sushi 🧵 <br>
+  <%= image_tag "image.jpeg", alt: "Image generated", class: "d-block mx-lg-auto img-fluid", width:"300", height:"200", loading:"lazy" %>
+  Prepare the Rice:<br>
+
+  Start with short-grain sushi rice.
+  Rinse the rice until the water runs clear.
+  Cook the rice according to package instructions.
+  Mix sushi vinegar (rice vinegar, sugar, and salt) into the cooked rice while it's still warm. This gives the rice its characteristic flavor and stickiness.
+  Assemble the Sushi:
+    <%= image_tag "image1.jpeg", alt: "Image generated", class: "d-block mx-lg-auto img-fluid", width:"150", height:"100", loading:"lazy" %>
+
+  <br>
+  Place a bamboo sushi rolling mat on a clean surface.
+  Lay a sheet of plastic wrap on the mat to prevent sticking.
+  Put a sheet of nori (seaweed) on the plastic wrap, shiny side down.
+  Moisten your fingers to prevent sticking and spread a thin layer of prepared rice evenly over the nori, leaving a small border at the top.
+  Add your choice of ingredients like sliced fish, vegetables, or avocado on top of the rice.
+  Roll and Slice:
+    <%= image_tag "image2.jpeg", alt: "Image generated", class: "d-block mx-lg-auto img-fluid", width:"150", height:"100", loading:"lazy" %>
+  <br>
+  Lift the bamboo mat's edge closest to you and start rolling the nori and rice over the fillings, using the mat to shape it into a tight cylinder.
+  Wet the exposed border of the nori with a bit of water to seal the roll.
+  Use a sharp, wet knife to slice the roll into bite-sized pieces. Dip the knife in water between cuts to prevent sticking.
+  Serve your homemade sushi with soy sauce, pickled ginger, and wasabi. Enjoy your delicious creations! 🍣 #SushiMaking #HomemadeSushi #SushiChef
+
+  </p>
+
+  <%= link_to "Regenerate", download_path, class: "btn btn-outline-primary px-3 py-2 w-full rounded-4" %>
+  <%= link_to "Tweet 🐦", download_path, id: "tweet", class: "btn btn-primary text-white px-3 py-2 w-full rounded-4 border border-info" %>
+
+
+  <ul class="mt-5">
+    More newsjacked posts are also ready!
+    <li><a>Trending: Fortnite</a></li>
+    <li>
+      <a>Incoming trend: Black Friday</a>
+    </li>
+    <li>
+      <a>Incoming trend: Christmas</a>
+    </li>
+    <li>
+      <a>Trending: Japan autumn</a>
+    </li>
+  </ul>
+  <%# <%= image
+  <%= post.trend
+  # Your content will be sent within 2hours to your email
+  # <%= render 'shared/sign_button' %>
+</div>

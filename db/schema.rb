@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_28_191729) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_23_080417) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_191729) do
     t.string "company_website_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "social_media_url"
+    t.string "topic"
+    t.bigint "mail_list_id"
+    t.index ["mail_list_id"], name: "index_generate_posts_on_mail_list_id"
   end
 
   create_table "mail_lists", force: :cascade do |t|
@@ -62,6 +66,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_191729) do
     t.string "country_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "scraper_id"
+    t.index ["scraper_id"], name: "index_search_preferences_on_scraper_id"
   end
 
   create_table "trial_click_users", force: :cascade do |t|
@@ -78,4 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_191729) do
     t.text "company_name"
   end
 
+  add_foreign_key "generate_posts", "mail_lists"
+  add_foreign_key "search_preferences", "scrapers"
 end

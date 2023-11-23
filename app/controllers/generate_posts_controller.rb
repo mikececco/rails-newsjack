@@ -5,9 +5,8 @@ class GeneratePostsController < ApplicationController
   def create
     @generate_post = GeneratePost.new(generate_post_params)
     # @image = stability(@generate_post)
-    @image = post
-
-    sleep 2
+    # @image = post
+    sleep 8
 
     respond_to do |format|
       if @generate_post.save
@@ -112,9 +111,16 @@ class GeneratePostsController < ApplicationController
     output_url
   end
 
+  def download
+    image_filename = 'image.jpeg'
+    image_path = Rails.root.join('app', 'assets', 'images', image_filename)
+
+    send_file image_path, filename: image_filename, type: 'image/jpeg'
+  end
+
   private
 
   def generate_post_params
-    params.require(:generate_post).permit(:company_website_url, :trend)
+    params.require(:generate_post).permit(:company_website_url, :trend, :social_media_url, :topic)
   end
 end

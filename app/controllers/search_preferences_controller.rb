@@ -4,7 +4,7 @@ require 'json'
 
 class SearchPreferencesController < ApplicationController
   def new
-    if Rails.env.production?
+    if Rails.env.production? && request.location.present?
       @country = request.location.country_code
     else
       # Set a default country for non-production environments
@@ -15,6 +15,8 @@ class SearchPreferencesController < ApplicationController
 
   def create
     @search_preference = SearchPreference.new(search_preference_params)
+    @scraper = Scraper.new
+    @search_preference.scraper = @scraper
     if @search_preference.save
       country = ISO3166::Country[@search_preference.country_code]
       readable_country = country.translations[I18n.locale.to_s]
@@ -39,10 +41,10 @@ class SearchPreferencesController < ApplicationController
         @scraper = cached_data[:scraper]
         @twitter_trends = cached_data[:twitter_trends]
       else
-        @scraper = Scraper.new
         @scraper.country_code = @search_preference.country_code
         @scraper.country_name = @scraper.set_country(@search_preference.country_code)
         @scraper.scraped_news = @scraper.start
+        @scraper.search_preference = @search_preference
         @scraper.save
         @twitter_trends = twitter_trends
 
