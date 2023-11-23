@@ -62,8 +62,9 @@ gem 'easy_translate'
 gem 'dotenv'
 gem 'friendly_id', '~> 5.4'
 gem 'redcarpet'
-
-
+gem "ruby-openai"
+gem "imgkit"
+gem "wkhtmltoimage-binary", "0.12.4"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

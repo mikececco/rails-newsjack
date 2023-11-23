@@ -1,0 +1,7 @@
+<% if @generate_post.errors.any? %>
+  // Handle errors, for example by updating a DOM element with error messages
+  alert('Error: ' + '<%= j @generate_post.errors.full_messages.join(', ') %>');
+<% else %>
+  // Handle success, for example by updating a DOM element with a success message
+  alert('Post created successfully!');
+<% end %>

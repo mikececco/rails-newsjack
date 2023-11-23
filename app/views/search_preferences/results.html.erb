@@ -1,14 +1,139 @@
-<main class="container py-5 mt-5">
-  <h1 class="h3 mb-3 fw-normal">Scraped News</h1>
-  <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-    <div class="list-group list-group-checkable d-grid gap-2 border-0">
-      <% @scraped_news.scraped_news.each do |index, news_item| %>
-        <a href="<%= news_item["url"] %>" target="_blank" style="cursor: pointer !important;">
-          <label class="list-group-item rounded-3 py-3">
-            <%= news_item["translated"].nil? ? news_item["news"] : news_item["translated"] %>
-          </label>
-        </a>
-        <% end %>
-    </div>
-  </div>
-</main>
+<body class="g-sidenav-show bg-gray-100">
+  <%= render 'sidebar' %>
+
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <%= render 'navbar' %>
+    <turbo-frame id="box_1" data-turbo-action="advance">
+      <div class="container-fluid py-4">
+        <div class="row my-4">
+          <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+            <div class="card">
+              <div class="pb-0 p-3 mb-4">
+                <%# COPY PASTE HERE table-trends.erb %>
+                <%= simple_form_for GeneratePost.new, data: { controller: 'generate_posts' } do |form| %>
+                  <div class="col-md-12 mb-lg-0 mb-4">
+                    <div class="mt-4">
+                      <div class="pb-0 p-3 mb-4">
+                        <div class="row">
+                          <div>
+                            <%= content_tag :h6, "Company website" %>
+                            <%= form.text_field :company_website_url, class: "form-control", id: "no-shadow-form", placeholder: "https://www.newsjack.me/", required: true %>
+                            <%# placeholder: "We 10x brand awareness for SMEs and solopreneurs with viral content thanks to newsjacking and AI..." %>
+                          </div>
+                          <%= form.hidden_field :trend, id: 'selected-trend-field' %> <!-- Hidden field to store selected trend -->
+                        </div>
+                      </div>
+                      <div class="pb-0 p-3 mb-4">
+                        <div class="row">
+                          <div>
+                          <%= content_tag :h6, "Your LinkedIn or Twitter" %>
+                          <%= form.text_field :social_media_url, class: "form-control", id: "no-shadow-form", placeholder: "We get your writing style otherwise we create it...", required: true %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pb-0 p-3 mb-4">
+                        <div class="row">
+                          <div>
+                          <%= content_tag :h6, "Topic or get inspired" %>
+                          <%= form.text_field :topic, class: "form-control", id: "no-shadow-form", placeholder: "Leave blank to get inspired based on your company", required: true %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-end">
+                        <%= form.button :button, type: "submit", id:"submitGenerate", class: "text-white bg-primary px-3 py-2 w-full rounded-4 border border-warning", data: { action: "click->generate#reset" } do %>
+                          Generate 🪄
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="p-3 pb-0">
+                <h6>Preview</h6>
+              </div>
+              <div class="card-body p-3 text-center">
+                <div class="d-flex justify-content-center">
+                  <div class="spinner-border mb-3" id="loading-bar" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                <div id="text-spinner">
+                  <span id="element"></span>
+                </div>
+                <div id="results">
+                  <turbo-stream action="update" target="results">
+                    <template>
+                      <turbo-frame id="results">
+                      </turbo-frame>
+                    </template>
+                  </turbo-stream>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </turbo-frame>
+  </main>
+  <script>
+      document.getElementById('submitGenerate').addEventListener('click', function (e) {
+
+        var typed = new Typed('#element', {
+          strings: ['Choosing among trending topics for your brand.', 'Adding your brand voice.', 'Generating engaging content.'],
+            typeSpeed: 50,
+            loopCount: Infinity
+        });
+
+
+        // Scroll to the element with the ID "results"
+        var resultsElement = document.getElementById('results');
+        if (resultsElement) {
+          resultsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    $(document).ready(function() {
+      $('#submitBtn').on('click', function(e) {
+        e.preventDefault(); // Prevent the form from submitting immediately
+
+        var emailValue = $('input[name="email"]').val();
+
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (emailRegex.test(emailValue)) {
+          console.log('Valid email address: ' + emailValue);
+          var formData = $('form').serializeArray();
+          var jsonFormData = {};
+          $.each(formData, function() {
+            jsonFormData[this.name] = this.value;
+          });
+          // Send the form data as JSON via AJAX
+          $.ajax({
+            type: 'POST',
+            url: '/emails', // Your form submission URL
+            contentType: 'application/json', // Set the content type to JSON
+            data: JSON.stringify(jsonFormData), // Convert the form data to JSON
+            dataType: 'json', // Specify that you expect JSON in response
+            success: function(data) {
+              // Handle the JSON response here
+              console.log("Submitted successfully");
+            },
+            error: function(xhr, status, error) {
+              console.error("Submission failed:", error);
+              // Handle errors if the form submission fails
+            }
+          });
+          return false;
+        } else {
+          $('#errorDiv').text('Invalid email address');
+        }
+
+        // Serialize the form data into a JSON object
+      });
+    });
+  </script>
+</body>

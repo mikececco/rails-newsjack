@@ -1,0 +1,88 @@
+<div class="pb-0 p-3 mb-4">
+                  <div class="row">
+                    <div>
+                    <h6>Select trend</h6>
+                      <div class="table-responsive scrollarea">
+                        <table class="table align-items-center mb-0">
+                          <thead>
+                            <tr>
+                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Select</th>
+                              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Trends</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stats</th>
+                              <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Hype</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% translated_news_array = [] %>
+                            <% @new_hash.first(10).each do |index, news_item| %>
+                              <% translated_news = news_item[:translated] == (false || nil) ? news_item[:news] : news_item[:translated] %>
+                              <% translated_news_array << translated_news if translated_news.present? %>
+                              <tr>
+                                <td>
+                                  <button class="select-trend btn btn-sm mb-0 px-3 py-2 w-full rounded-4 border" data-trend="<%= translated_news %>">Select</button>
+                                </td>
+                                <td>
+                                  <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm"><%= truncate(translated_news, length: 20) %></h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <a href="<%= news_item[:url] %>" class="preview-link" target="_blank" rel="noopener noreferrer">
+                                    <span class="text-xs font-weight-bold"><%= truncate(news_item[:url], length: 20) %></span>
+                                  </a>
+                                  <%# <div class="preview-container">
+                                    <iframe class="preview-iframe" src="<%= news_item[:url]"></iframe>
+                                  </div> %>
+                                </td>
+                                <td class="align-middle">
+                                  <div class="progress-wrapper w-75 mx-auto">
+                                    <div class="progress-info">
+                                      <div class="progress-percentage">
+                                        <span class="text-xs font-weight-bold"><%= truncate(translated_news, length: 10) %></span>
+                                      </div>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            <% end %>
+                            <% @twitter_trends.each do |trend| %>
+                              <% translated_news_array << trend[0] %>
+                                <tr>
+                                  <td>
+                                    <button class="select-trend btn btn-sm mb-0 px-3 py-2 w-full rounded-4 border" data-trend="<%= trend[0] %>">Select</button>
+                                  </td>
+                                  <td>
+                                    <div class="d-flex px-2 py-1">
+                                      <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm"><%= truncate(trend[0], length: 20) %></h6>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="align-middle text-center text-sm">
+                                    <span class="text-xs font-weight-bold"><%= trend[1] %> tweets</span>
+                                  </td>
+                                  <td class="align-middle">
+                                    <div class="progress-wrapper w-75 mx-auto">
+                                      <div class="progress-info">
+                                        <div class="progress-percentage">
+                                          <span class="text-xs font-weight-bold">+20%</span>
+                                        </div>
+                                      </div>
+                                      <div class="progress">
+                                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
